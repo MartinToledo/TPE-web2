@@ -13,38 +13,30 @@
             $this->model = new libroModel();
         }
 
-        function Home(){
-            $Libros = $this->model->GetLibros();
-            $this->view->MostrarTodos($Libros);
-        }
-
-        function InsertLibro(){
-            $titulo = $_POST["tituloForm"];
-            $descripcion = $_POST["descripcionForm"];
-            if(isset($_POST["completadaForm"])){
-                $completada = 1;
-            }
-            else{
-                $completada = 0;
-            }
-
-            $this->model->InsertarTarea($titulo, $descripcion, $completada);
+        function InsertAdmin(){
+            $nombre = $_POST["nombreForm"];            
+            $password = $_POST["passwordForm"];
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            $this->model->InsertarAdmin($nombre, $hash);
 
             header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
         }
 
-        function VerLibro($param){
-            $Libro = $this->model->GetLibro($param[0]);
-            $this->view->MostrarLibro($Libro);
+        function VerAdmin($param){
+            $Admin = $this->model->GetAdmin($param[0]);
+            $this->view->MostrarAdmin($Admin);
         }
 
-        function BorrarLibro($param){
-            $this->model->BorrarTarea($param[0]);
+        function BorrarAdmin($param){
+            $this->model->BorrarAdmin($param[0]);
             header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
         }
 
-        function CompletarTarea($param){
-            $this->model->CompletarTarea($param[0]);
+        function ModificarAdmin($param){
+            $nombre = $_POST["nombreForm"];
+            $password = $_POST["passwordForm"];
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            $this->model->ModificarAdmin($nombre, $hash);
             header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
         }
     }

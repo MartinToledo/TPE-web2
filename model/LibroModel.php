@@ -22,11 +22,15 @@
             return $sentencia->fetch(PDO::FETCH_ASSOC);
         }
 
+        function GetLibrosByGenero($id_genero){
+            $sentencia = $this->db->prepare("select * from libro, genero where libro.id_genero = genero.id_genero and libro.id_genero=?");
+            $sentencia->execute(array($id_genero));
+            return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        }
+
         function InsertarLibro($id_genero, $titulo, $descripcion, $autor, $editorial, $edad){
             $sentencia = $this->db->prepare("INSERT INTO libro(id_genero, titulo, descripcion, autor, editorial, edad) VALUES(?,?,?,?,?,?)");
-            $sentencia->execute(array($id_genero, $titulo, $descripcion, $autor, $editorial, $edad));    
-            //$lastId = $this->db->lastInsertId();
-            //return $this->GetLibro($lastId);
+            $sentencia->execute(array($id_genero, $titulo, $descripcion, $autor, $editorial, $edad));
         }
 
         function BorrarLibro($id_libro){
@@ -34,7 +38,6 @@
             if(isset($libro)){
                 $sentencia = $this->db->prepare("delete from libro where id_libro=?");
                 $sentencia->execute(array($id_libro));
-                //return $libro;
             }
         }
 

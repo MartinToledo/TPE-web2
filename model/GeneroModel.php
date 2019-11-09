@@ -24,21 +24,18 @@
 
         function InsertarGenero($nombre){
             $sentencia = $this->db->prepare("INSERT INTO genero(nombre) VALUES(?)");
-            $sentencia->execute(array($nombre));    
-            //$lastId = $this->db->lastInsertId();
-            //return $this->GetGenero($lastId);
+            $sentencia->execute(array($nombre));
         }
 
         function BorrarGenero($id_genero){
-            $genero = $this->GetTarea($id_genero);
+            $genero = $this->GetGenero($id_genero);
             if(isset($genero)){
                 $sentencia = $this->db->prepare("delete from genero where id_genero=?");
                 $sentencia->execute(array($id_genero));
-                //return $libro;
             }
         }
 
-        function ModificarGenero($nombre, $id_genero){
+        function ModifiGenero($id_genero, $nombre){
             $sentencia = $this->db->prepare("update genero set nombre=? where id_genero=?");
             $sentencia->execute(array($nombre, $id_genero));
         }
