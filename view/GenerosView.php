@@ -8,10 +8,10 @@
             $this->Smarty = new Smarty();
         }
     
-        function MostrarTodos($Generos){
-            $Titulo = "Todos Los Generos";
+        function MostrarGeneros($Generos, $Titulo, $Permisos){
             $this->Smarty->assign('Titulo',$Titulo);
             $this->Smarty->assign('Generos',$Generos);
+            $this->Smarty->assign('Permisos',$Permisos);
 
             $this->Smarty->display('templates/generos.tpl');
         }

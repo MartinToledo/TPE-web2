@@ -28,7 +28,7 @@ header.cabeceraPag {
     margin: 0px;
     padding: 0px;
     text-align: center;
-    color: aliceblue;
+    color: black;
 }
 
 h1 {
@@ -41,7 +41,7 @@ nav {
     grid-area: nav;
     text-align: center;
     width: 99.7%;
-    background: black;
+    background: white;
     border-bottom: 5px solid green;
     margin: 0 0 10px 0;
 }
@@ -87,7 +87,7 @@ header.cabeceraArt {
 
 h2 {
     text-align: center;
-    color: aliceblue;
+    color: black;
     margin: 0;
 }
 

@@ -7,19 +7,43 @@
         function __construct(){
             $this->Smarty = new Smarty();
         }
-    
-        function MostrarTodos($Libros){
-            $Titulo = "Todos Los Libros";
-            $this->Smarty->assign('Titulo',$Titulo);
-            $this->Smarty->assign('Libros',$Libros);
 
-            $this->Smarty->display('templates/homeAdmin.tpl');
+        function MostrarCrear($Generos, $Permisos){
+            $this->Smarty->assign('Generos',$Generos);
+            $this->Smarty->assign('Permisos',$Permisos);
+
+            $this->Smarty->display('templates/crear.tpl');
         }
 
-        function MostrarLibro($Libro){
-            $this->Smarty->assign('Libro',$Libro);
+        function MostrarEditarLibro($libro, $imagenesLibro, $generos, $Permisos){
+            $this->Smarty->assign('libro',$libro);
+            $this->Smarty->assign('generos',$generos);
+            $this->Smarty->assign('ImagenesLibro',$imagenesLibro);
+            $this->Smarty->assign('Permisos',$Permisos);
 
-            $this->Smarty->display('templates/libro.tpl');
+            $this->Smarty->display('templates/editarLibro.tpl');
+        }
+
+        function MostrarEditarGenero($genero, $Permisos){
+            $this->Smarty->assign('genero',$genero);
+            $this->Smarty->assign('Permisos',$Permisos);
+
+            $this->Smarty->display('templates/editarGenero.tpl');
+        }
+
+        function MostrarUsuarios($Usuarios, $Permisos){
+            $this->Smarty->assign('Usuarios',$Usuarios);
+            $this->Smarty->assign('Permisos',$Permisos);
+
+            $this->Smarty->display('templates/usuarios.tpl');
+        }
+
+        function MostrarMensaje($Mensaje, $Retorno, $Permisos){
+            $this->Smarty->assign('Mensaje', $Mensaje);
+            $this->Smarty->assign('Retorno', $Retorno);
+            $this->Smarty->assign('Permisos', $Permisos);
+
+            $this->Smarty->display('templates/mensajesAdmin.tpl');
         }
     }
 ?>

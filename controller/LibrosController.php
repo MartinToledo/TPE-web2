@@ -1,59 +1,49 @@
 <?php
     require_once "./view/LibrosView.php";
+    require_once "./view/GenerosView.php";
     require_once "./model/LibroModel.php";
+    require_once "./model/GeneroModel.php";
     require_once "SecuredController.php";
 
     class LibrosController extends SecuredController{
-        private $view;
-        private $model;
+        private $viewLibro;
+        private $viewGenero;
+        private $modelLibro;
+        private $modelGenero;
+        private $modelImagenLibro;
+        private $permisos;
 
         function __construct(){
-            $this->view = new LibrosView();
-            $this->model = new libroModel();
+            $this->viewLibro = new LibrosView();
+            $this->viewGenero = new GenerosView();
+            $this->modelLibro = new LibroModel();
+            $this->modelGenero = new GeneroModel();
+            $this->modelImagenLibro = new ImagenLibroModel();
+            $this->permisos = $this->definirPermisos();
         }
 
         function Home(){
-            $Libros = $this->model->GetLibros();
-            $this->view->MostrarTodos($Libros);
-        }
-
-        function InsertLibro(){
-            $genero = $_POST["generoForm"];            
-            $titulo = $_POST["tituloForm"];
-            $descripcion = $_POST["descripcionForm"];
-            $autor = $_POST["autorForm"];
-            $editorial = $_POST["editorialForm"];
-            $edad = $_POST["edadForm"];            
-
-            $this->model->InsertarLibro($genero, $titulo, $descripcion, $autor, $editorial, $edad);
-
-            header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+            $Libros = $this->modelLibro->GetLibros();
+            $Titulo = "Todos Los Libros";
+            $this->viewLibro->MostrarLibros($Libros, $Titulo, $this->permisos);
         }
 
         function VerLibro($param){
-            $Libro = $this->model->GetLibro($param[0]);
-            $this->view->MostrarLibro($Libro);
+            $Libro = $this->modelLibro->GetLibro($param[0]);
+            $imagenesLibro = $this->modelImagenLibro->GetImagenesByLibro($param[0]);
+            $this->viewLibro->MostrarLibro($Libro, $imagenesLibro, $this->permisos);
         }
 
         function VerLibrosPorGenero($param){
-            $Libros = $this->model->GetLibrosByGenero($param[0]);
-            $this->view->MostrarLibros($Libros);
+            $Libros = $this->modelLibro->GetLibrosByGenero($param[0]);
+            $Genero = $Libros[0]["nombre"];
+            $this->viewLibro->MostrarLibros($Libros, $Genero, $this->permisos);
         }
 
-        function BorrarLibro($param){
-            $this->model->BorrarLibro($param[0]);
-            header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
-        }
-
-        function ModificarLibro($param){
-            $genero = $_POST["generoForm"];
-            $titulo = $_POST["tituloForm"];
-            $descripcion = $_POST["descripcionForm"];
-            $autor = $_POST["autorForm"];
-            $editorial = $_POST["editorialForm"];
-            $edad = $_POST["edadForm"];
-            $this->model->ModificarLibro($param[0], $genero, $titulo, $descripcion, $autor, $editorial, $edad);
-            header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+        function VerGeneros(){
+            $Generos = $this->modelGenero->GetGeneros();
+            $Titulo = "Todos Los Generos";
+            $this->viewGenero->MostrarGeneros($Generos, $Titulo, $this->permisos);
         }
     }
 ?>

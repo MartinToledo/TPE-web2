@@ -8,16 +8,18 @@
             $this->Smarty = new Smarty();
         }
     
-        function MostrarTodos($Libros){
-            $Titulo = "Todos Los Libros";
+        function MostrarLibros($Libros, $Titulo, $permisos){
             $this->Smarty->assign('Titulo',$Titulo);
             $this->Smarty->assign('Libros',$Libros);
+            $this->Smarty->assign('Permisos',$permisos);
 
-            $this->Smarty->display('templates/home.tpl');
+            $this->Smarty->display('templates/libros.tpl');
         }
 
-        function MostrarLibro($Libro){
+        function MostrarLibro($Libro, $imagenesLibro, $permisos){
             $this->Smarty->assign('Libro',$Libro);
+            $this->Smarty->assign('ImagenesLibro',$imagenesLibro);
+            $this->Smarty->assign('Permisos',$permisos);
 
             $this->Smarty->display('templates/libro.tpl');
         }

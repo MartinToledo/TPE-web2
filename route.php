@@ -1,8 +1,8 @@
 <?php
     require_once "config/ConfigApp.php";
     require_once "controller/LibrosController.php";
-    require_once "controller/GenerosController.php";
-    require_once "controller/LoginController.php";
+    require_once "controller/UsuariosController.php";
+    require_once "controller/AdminController.php";
 
     function parseURL($url){
         $urlExploded = explode('/', $url);
