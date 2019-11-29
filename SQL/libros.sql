@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2019 a las 01:22:40
+-- Tiempo de generación: 29-11-2019 a las 00:16:29
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `libros`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(11) NOT NULL,
+  `id_usuario` varchar(50) NOT NULL,
+  `id_libro` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  `puntaje` int(1) NOT NULL,
+  `contenido` varchar(2000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comentario`, `id_usuario`, `id_libro`, `fecha`, `puntaje`, `contenido`) VALUES
+(5, 'user1', 6, '2019-11-02 00:42:07', 3, 'AQUÍ ESTA EL CONTENIDO DEL COMENTARIO ASIGNADO A EL LIBRO \"La luna Violeta\"'),
+(7, 'user3', 10, '2019-11-27 04:51:01', 5, 'ESTE ES EL CONTENIDO DEL COMENTARIO QUE HICE DESDE POST MAN'),
+(56, 'user2', 2, '2019-11-29 03:13:46', 5, 'MIRA MAMA PUEDO AGREGAR COMENTARIOS'),
+(57, 'user2', 2, '2019-11-29 03:14:06', 3, 'ANDA TODOOOO'),
+(58, 'user2', 2, '2019-11-29 03:14:30', 4, 'ME GUSTA EL JUGUITO DE FRUTA'),
+(59, 'user2', 2, '2019-11-29 03:14:55', 1, 'QUIERO VER LA GRAN AVENTURA LEGO OTRA VEEEEEZ');
 
 -- --------------------------------------------------------
 
@@ -53,6 +80,14 @@ CREATE TABLE `imagenlibro` (
   `id_imagen` varchar(100) NOT NULL,
   `id_libro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `imagenlibro`
+--
+
+INSERT INTO `imagenlibro` (`id_imagen`, `id_libro`) VALUES
+('bosquepintado.jpg', 2),
+('monstruo.png', 7);
 
 -- --------------------------------------------------------
 
@@ -114,7 +149,6 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`nombre`, `email`, `passcode`, `permisos`) VALUES
-('Ter', 'm.angeles.rasmussen@gmail.com', '$2y$10$vWsPvVNDi0VqMzPKbZlWF.Ik5sb6F20UbcEhlI2C9fxXVg8PcZ8Ri', 0),
 ('user1', 'reandorotoredo@gmail.com', '$2y$10$jK23x7/ZwYqGbT.50ZlOdekUSn3596foKPPE02ecpclbSfHNfrwq6', 0),
 ('user2', 'reandorotoredo@gmail.com', '$2y$10$sad920CHI/1ZUpcplybrReW3dpfwLfEmNlFsYGZFGvO1CXdZaQQm2', 1),
 ('user3', 'reandorotoredo@gmail.com', '$2y$10$OCbDXuDEhxGhyWv9P3ZLSOWW1ZY89oUO7scL3mTR57X/lZfEoaaBq', 0);
@@ -122,6 +156,12 @@ INSERT INTO `usuario` (`nombre`, `email`, `passcode`, `permisos`) VALUES
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indices de la tabla `genero`
@@ -158,6 +198,12 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
@@ -167,7 +213,7 @@ ALTER TABLE `genero`
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

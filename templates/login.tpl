@@ -16,4 +16,4 @@
     </form>
     <p><a href="olvideMiContraseña">¿Olvidaste tu contraseña? ¡Has click aquí para recuprarla!</a></p>
     <p><a href="Registro">¿Aun no tienes tu usuario? ¡Has click aquí para registrarte!</a></p>
-{* {include file="publicidad.tpl"} *}
+{include file="publicidad.tpl"}

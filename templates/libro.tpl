@@ -31,7 +31,7 @@
                         <option value="5" selected>5</option>
                     </select>
                     <label>Escribe tu comentario:</label>
-                    <input type="text" name="contenidoComentario" placeholder="Comentario">
+                    <textarea name="contenidoComentario" placeholder="Comentario"></textarea>
                     <input type="submit" value="Agregar Comentario">
                 </form>
             {/if}

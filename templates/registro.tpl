@@ -18,4 +18,4 @@
         </div>
         <button type="submit">Registrar e ingresar</button>
     </form>
-{* {include file="publicidad.tpl"} *}
+{include file="publicidad.tpl"}

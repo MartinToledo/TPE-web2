@@ -8,7 +8,6 @@
     {* <link rel="shortcut icon" href="images/Favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./styles/style.css"> *}
     <base href="http://127.0.0.1/TPEWEB2/" target="_self">
-    {* <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> *}
     <script src="./js/vue.js"></script>
 </head>
 <body class="contenedor">

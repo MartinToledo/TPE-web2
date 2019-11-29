@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-28 18:16:47
+/* Smarty version 3.1.33, created on 2019-11-29 00:13:17
   from 'D:\xampp\htdocs\TPEWEB2\templates\libro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de0393f5b7cd2_00881701',
+  'unifunc' => 'content_5de08ccd6d81e1_69025045',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3382c886e6dee6d1fb7292c8b1aef5699248dbcb' => 
     array (
       0 => 'D:\\xampp\\htdocs\\TPEWEB2\\templates\\libro.tpl',
-      1 => 1574975765,
+      1 => 1574997194,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:publicidad.tpl' => 1,
   ),
 ),false)) {
-function content_5de0393f5b7cd2_00881701 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de08ccd6d81e1_69025045 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <section>
@@ -77,7 +77,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <option value="5" selected>5</option>
                     </select>
                     <label>Escribe tu comentario:</label>
-                    <input type="text" name="contenidoComentario" placeholder="Comentario">
+                    <textarea name="contenidoComentario" placeholder="Comentario"></textarea>
                     <input type="submit" value="Agregar Comentario">
                 </form>
             <?php }?>

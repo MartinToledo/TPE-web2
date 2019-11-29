@@ -20,6 +20,6 @@
             {/foreach}
         </article>
     </section>
-    {* {include file="publicidad.tpl"} *}
+    {include file="publicidad.tpl"}
   </body>
 </html>

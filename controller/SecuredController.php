@@ -20,19 +20,6 @@
             }
         }
 
-        function checkSessionStarted(){
-            session_start();
-            if(isset($_SESSION["User"])){
-                if(isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 200)){
-                    $this->logout();
-                }
-                $_SESSION['LAST_ACTIVITY'] = time();
-            }
-            else{
-                header(LOGIN);
-            }
-        }
-
         function definirPermisos(){
             session_start();
             if(isset($_SESSION["User"])){//si hay usuario loggeado ya sabe que tiene que mostrar la opcion de poner comentarios tambien

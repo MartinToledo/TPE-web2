@@ -23,12 +23,15 @@ function getComentarios(){
     fetch(url)
     .then(response => response.json())
     .then(comentarios => {
-        app.comentarios = comentarios; // similar a $this->smarty->assign("tasks", $tasks)
+        app.comentarios = comentarios;
         let sumaPuntaje = 0;
         for(let comentario of comentarios){
             sumaPuntaje += parseInt(comentario.puntaje, 10);
         }
         app.promedioPuntaje = ((sumaPuntaje/comentarios.length).toFixed(2));
+        if(isNaN(app.promedioPuntaje)){
+            app.promedioPuntaje = 0;
+        }
     })
     .catch(error => console.log(error));
 }

@@ -23,4 +23,4 @@
             <button type="submit">Recuperar</button>
         </form>
     {/if}
-{* {include file="publicidad.tpl"} *}
+{include file="publicidad.tpl"}
