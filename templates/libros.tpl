@@ -1,11 +1,11 @@
 {include file="header.tpl"}
-    <section>
+    <section class="productos">
         <header class="cabeceraArt">
             <h2>{$Titulo}</h2>
         </header>
-        <article class="libro">
-            {foreach from=$Libros item=libro}
-                <ul class="lista">
+        {foreach from=$Libros item=libro}
+            <article class="libros">
+                <ul>
                     <li>LIBRO: {$libro['titulo']}</li>
                     <li>AUTOR: {$libro['autor']}</li>
                     <li>EDITORIAL: {$libro['editorial']}</li>
@@ -17,8 +17,8 @@
                     <button><a href="EliminarLibro/{$libro['id_libro']}/">ELIMINAR</a></button>
                 {/if}
                 </ul>
-            {/foreach}
-        </article>
+            </article>
+        {/foreach}
     </section>
     {include file="publicidad.tpl"}
   </body>

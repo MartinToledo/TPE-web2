@@ -70,14 +70,14 @@
             $libro = $param[0];
             $imagen = $_FILES['imagen']['tmp_name'];
             $nombreImagen = $_FILES['imagen']['name'];
-            $retorno = "/EditarLibro/" . $libro;
+            $retorno = "EditarLibro/" . $libro;
             $imagenDb = $this->modelImagenLibro->GetImagen($nombreImagen);
             if(isset($imagenDb['id_imagen'])){
                 $this->view->MostrarMensaje("EL ARCHIVO YA EXISTIA", $retorno, $this->permisos);
             }
             else{
                 $this->modelImagenLibro->InsertarImagen($imagen, $nombreImagen, $libro);
-                header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . $retorno);
+                header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/EditarLibro/" . $libro);
             }
         }
 
@@ -96,7 +96,7 @@
         function BorrarGenero($param){
             $mensaje = $this->modelGenero->BorrarGenero($param[0]);
             $retorno = "Generos";
-            $this->view->MostrarMensaje($mensaje, $retorno, $this->permisos);
+            header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/Generos");
         }
 
         function BorrarUsuario($param){

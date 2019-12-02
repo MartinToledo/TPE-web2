@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-28 20:47:15
+/* Smarty version 3.1.33, created on 2019-12-02 01:26:14
   from 'D:\xampp\htdocs\TPEWEB2\templates\comentarios.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de05c8380b7f1_48329849',
+  'unifunc' => 'content_5de49266681294_94583849',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c0963672823235cd244fab93940fb3843a0d389' => 
     array (
       0 => 'D:\\xampp\\htdocs\\TPEWEB2\\templates\\comentarios.tpl',
-      1 => 1574984831,
+      1 => 1575260772,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de05c8380b7f1_48329849 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de49266681294_94583849 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <section id="template-vue-comentarios">
     <h3>{{subtitulo}}</h3>

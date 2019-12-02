@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 04:22:56
+/* Smarty version 3.1.33, created on 2019-12-02 00:17:45
   from 'D:\xampp\htdocs\TPEWEB2\templates\editarLibro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddb49102f9639_51275161',
+  'unifunc' => 'content_5de48259d61130_65509565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '016b0bfe21b4ac96f7da49c511b733a466488cd1' => 
     array (
       0 => 'D:\\xampp\\htdocs\\TPEWEB2\\templates\\editarLibro.tpl',
-      1 => 1574652156,
+      1 => 1575256660,
       2 => 'file',
     ),
   ),
@@ -22,24 +22,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:publicidad.tpl' => 1,
   ),
 ),false)) {
-function content_5ddb49102f9639_51275161 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de48259d61130_65509565 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <section>
-        <article>
+        <article class="libro">
             <header class="cabeceraArt">
-                <h2>Editar:</h2>
+                <h2>Editar Libro</h2>
             </header>
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ImagenesLibro']->value, 'imagenLibro');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['imagenLibro']->value) {
 ?>
-                <img width="200px" src="./imagesLibros/<?php echo $_smarty_tpl->tpl_vars['imagenLibro']->value['id_imagen'];?>
-">
                 <button><a href="EliminarImagenLibro/<?php echo $_smarty_tpl->tpl_vars['imagenLibro']->value['id_imagen'];?>
 /<?php echo $_smarty_tpl->tpl_vars['libro']->value['id_libro'];?>
-">ELIMINAR IMAGEN</a></button>
+">🢃 ELIMINAR IMAGEN 🢃</a></button>
+                <img class="libro" src="./imagesLibros/<?php echo $_smarty_tpl->tpl_vars['imagenLibro']->value['id_imagen'];?>
+">
             <?php
 }
 }
@@ -50,11 +50,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <label for="titulo">Titulo:</label>
                     <input type="text" name="titulo" value="<?php echo $_smarty_tpl->tpl_vars['libro']->value["titulo"];?>
 ">
-                </div>
-                <div>
-                    <label for="descripcion">Descripcion:</label>
-                    <textarea name="descripcion"><?php echo $_smarty_tpl->tpl_vars['libro']->value["descripcion"];?>
-</textarea>
                 </div>
                 <div>
                     <label for="autor">Autor:</label>
@@ -87,6 +82,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['genero']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
+                </div>
+                <div>
+                    <p>Descripcion:</p>
+                    <textarea class="contenidoDescripcion" name="descripcion"><?php echo $_smarty_tpl->tpl_vars['libro']->value["descripcion"];?>
+</textarea>
                 </div>
                 <input type="submit" value="Guardar Modificaciones">
             </form>

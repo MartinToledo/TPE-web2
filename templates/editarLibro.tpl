@@ -1,21 +1,17 @@
 {include file="header.tpl"}
     <section>
-        <article>
+        <article class="libro">
             <header class="cabeceraArt">
-                <h2>Editar:</h2>
+                <h2>Editar Libro</h2>
             </header>
             {foreach from=$ImagenesLibro item=imagenLibro}
-                <img width="200px" src="./imagesLibros/{$imagenLibro['id_imagen']}">
-                <button><a href="EliminarImagenLibro/{$imagenLibro['id_imagen']}/{$libro['id_libro']}">ELIMINAR IMAGEN</a></button>
+                <button><a href="EliminarImagenLibro/{$imagenLibro['id_imagen']}/{$libro['id_libro']}">🢃 ELIMINAR IMAGEN 🢃</a></button>
+                <img class="libro" src="./imagesLibros/{$imagenLibro['id_imagen']}">
             {/foreach}
             <form method="post" action="modificarLibro/{$libro["id_libro"]}">
                 <div>
                     <label for="titulo">Titulo:</label>
                     <input type="text" name="titulo" value="{$libro["titulo"]}">
-                </div>
-                <div>
-                    <label for="descripcion">Descripcion:</label>
-                    <textarea name="descripcion">{$libro["descripcion"]}</textarea>
                 </div>
                 <div>
                     <label for="autor">Autor:</label>
@@ -36,6 +32,10 @@
                                 <option value="{$genero['id_genero']}" {if $genero["id_genero"] == $libro["id_genero"]} selected {/if}>{$genero['nombre']}</option>
                         {/foreach}
                     </select>
+                </div>
+                <div>
+                    <p>Descripcion:</p>
+                    <textarea class="contenidoDescripcion" name="descripcion">{$libro["descripcion"]}</textarea>
                 </div>
                 <input type="submit" value="Guardar Modificaciones">
             </form>

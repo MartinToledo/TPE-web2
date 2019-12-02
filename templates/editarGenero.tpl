@@ -2,12 +2,12 @@
     <section>
         <article>
             <header class="cabeceraArt">
-                <h2>Editar:</h2>
+                <h2>Editar Genero</h2>
             </header>
-            <form method="post" action="modificarGenero/{$genero["id_genero"]}">
+            <form class="editarGenero" method="post" action="modificarGenero/{$genero["id_genero"]}">
                 <div>
-                    <label for="nombre">Descripcion:</label>
-                    <textarea name="nombre">{$genero["nombre"]}</textarea>
+                    <label for="nombre">Nombre del Genero:</label>
+                    <input name="nombre" value="{$genero["nombre"]}">
                 </div>
                 <input type="submit" value="Guardar Modificaciones">
             </form>

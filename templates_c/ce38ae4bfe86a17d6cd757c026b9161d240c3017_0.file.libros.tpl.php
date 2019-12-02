@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-28 23:56:01
+/* Smarty version 3.1.33, created on 2019-11-30 00:42:18
   from 'D:\xampp\htdocs\TPEWEB2\templates\libros.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de088c1cf5584_74649542',
+  'unifunc' => 'content_5de1e51a2e96e2_84600153',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce38ae4bfe86a17d6cd757c026b9161d240c3017' => 
     array (
       0 => 'D:\\xampp\\htdocs\\TPEWEB2\\templates\\libros.tpl',
-      1 => 1574995817,
+      1 => 1575085331,
       2 => 'file',
     ),
   ),
@@ -22,21 +22,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:publicidad.tpl' => 1,
   ),
 ),false)) {
-function content_5de088c1cf5584_74649542 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de1e51a2e96e2_84600153 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <section>
+    <section class="productos">
         <header class="cabeceraArt">
             <h2><?php echo $_smarty_tpl->tpl_vars['Titulo']->value;?>
 </h2>
         </header>
-        <article class="libro">
-            <?php
+        <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Libros']->value, 'libro');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['libro']->value) {
 ?>
-                <ul class="lista">
+            <article class="libros">
+                <ul>
                     <li>LIBRO: <?php echo $_smarty_tpl->tpl_vars['libro']->value['titulo'];?>
 </li>
                     <li>AUTOR: <?php echo $_smarty_tpl->tpl_vars['libro']->value['autor'];?>
@@ -57,11 +57,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['libro']->value) {
 /">ELIMINAR</a></button>
                 <?php }?>
                 </ul>
-            <?php
+            </article>
+        <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-        </article>
     </section>
     <?php $_smarty_tpl->_subTemplateRender("file:publicidad.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

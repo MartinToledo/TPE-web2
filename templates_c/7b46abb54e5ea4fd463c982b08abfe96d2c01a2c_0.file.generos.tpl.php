@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-20 03:54:52
+/* Smarty version 3.1.33, created on 2019-11-30 00:49:02
   from 'D:\xampp\htdocs\TPEWEB2\templates\generos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd4aafc9d5830_69135421',
+  'unifunc' => 'content_5de1e6ae07ef55_45116125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b46abb54e5ea4fd463c982b08abfe96d2c01a2c' => 
     array (
       0 => 'D:\\xampp\\htdocs\\TPEWEB2\\templates\\generos.tpl',
-      1 => 1574218474,
+      1 => 1575085719,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:publicidad.tpl' => 1,
   ),
 ),false)) {
-function content_5dd4aafc9d5830_69135421 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de1e6ae07ef55_45116125 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <section>
@@ -30,14 +30,14 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             <h2><?php echo $_smarty_tpl->tpl_vars['Titulo']->value;?>
 </h2>
         </header>
-        <article class="libro">
-            <ul class="lista">
+        <article class="generos">
+            <ul class="generos">
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Generos']->value, 'genero');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['genero']->value) {
 ?>
-                    <li><a href="Genero/<?php echo $_smarty_tpl->tpl_vars['genero']->value['id_genero'];?>
+                    <li class="genero"><a href="Genero/<?php echo $_smarty_tpl->tpl_vars['genero']->value['id_genero'];?>
 "><?php echo $_smarty_tpl->tpl_vars['genero']->value['nombre'];?>
 </a></li>
                     <?php if ($_smarty_tpl->tpl_vars['Permisos']->value == 1) {?>

@@ -48,6 +48,7 @@
                     session_start();
                     $_SESSION["User"] = $user;
                     $_SESSION["Permisos"] = $permisos;
+                    $_SESSION['LAST_ACTIVITY'] = time();
                     header(HOME);
                 }
                 else{

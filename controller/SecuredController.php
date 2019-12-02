@@ -9,7 +9,7 @@
         function checkSessionAdminStarted(){
             session_start();
             if((isset($_SESSION["User"])) && ($_SESSION["Permisos"] == 1)){
-                if(isset($_SESSION['LAST_ACTIVITY']) && ((time() - $_SESSION['LAST_ACTIVITY']) > 20000)){
+                if(isset($_SESSION['LAST_ACTIVITY']) && ((time() - $_SESSION['LAST_ACTIVITY']) > 2000)){
                     return false;
                 }
                 $_SESSION['LAST_ACTIVITY'] = time();
@@ -22,10 +22,16 @@
 
         function definirPermisos(){
             session_start();
-            if(isset($_SESSION["User"])){//si hay usuario loggeado ya sabe que tiene que mostrar la opcion de poner comentarios tambien
-                $permisos = $_SESSION["Permisos"];//si tenes permisos de admin podes comentar, puntuar, borrar/agregar imagenes
+            if(isset($_SESSION["User"])){
+                if(isset($_SESSION['LAST_ACTIVITY']) && ((time() - $_SESSION['LAST_ACTIVITY']) > 2000)){
+                    $this->logout();
+                }
+                else{
+                    $permisos = $_SESSION["Permisos"];
+                    $_SESSION['LAST_ACTIVITY'] = time();
+                }
             }
-            else{//si no hay usuario loggeado podes ver los cometarios y el puntaje pero no podes interactuar
+            else{
                 $permisos = -1;
             }
             return $permisos;

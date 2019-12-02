@@ -1,145 +1,184 @@
-.contenedor {
+body{
     background-image: url(images/LibrosAntiguos.jpg);
+    background-attachment: fixed;
     background-size: 100% 100%;
-    background-color: white;
-    background-repeat: no-repeat;
-    /* text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000; */
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     display: grid;
-    grid-template-columns: 30% 30% 10% 30%;
+    grid-template-columns: 60% 10% 30%;
     grid-template-rows: auto;
     grid-template-areas: 
-        "header1 header1 header1 header1"
-        "nav nav nav nav"
-        "contenido contenido contenido publicidad"
-        ". . . publicidad";
+        "header1 header1 header1"
+        "nav nav nav"
+        "contenido . publicidad";
+    color: aliceblue;
 }
 
-.botonMenu {
-    display: none;
-}
-
-header.cabeceraPag {
+header.cabeceraPag{
     grid-area: header1;
-    width: 99%;
     border: 5px;
     border-style: solid;
     border-color: aliceblue;
     height: 100px;
     margin: 0px;
     padding: 0px;
-    text-align: center;
-    color: black;
 }
 
-h1 {
+h1{
     font-size: 100px;
     margin: 0;
 }
 
-nav {
-    display: block;
+nav{
     grid-area: nav;
-    text-align: center;
-    width: 99.7%;
-    background: white;
+    width: 100%;
+    background: black;
     border-bottom: 5px solid green;
     margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.botonNav {
+.botonNav{
     display: inline-block;
     margin: 0px 10px;
     padding: 15px;
     text-transform: uppercase;
 }
 
-a {
+a{
     text-decoration: none;
-    color: black;
-}
-
-nav li:hover {
-    background: rgb(97, 40, 0);
-}
-
-section {
-    grid-area: contenido;
-    display: grid;
-    grid-template-columns: 49% 1% 49%;
-    grid-template-rows: auto;
-    grid-template-areas: 
-      "header2 header2 header2"
-      "art1 . art2"
-      "art3 . art4";
-}
-
-header.cabeceraArt {
-    grid-area: header2;
-    width: 95%;
-    height: 30px;
-    margin: 0;
-    padding: 0;
-    border: 5px;
-    border-color: black;
-    border-style: solid;
-    background-image: url(images/difum.jpg)
-}
-
-h2 {
-    text-align: center;
-    color: black;
-    margin: 0;
-}
-
-.portada1, .portada2, .portada3, .portada4 {
-    width: 50%;
-    height: 339px;
-    margin: 0;
-}
-
-.lista1, .lista2, .lista3, .lista4 {
     color: aliceblue;
 }
 
-article.libro1 {
-    grid-area: art1;
+nav li:hover{
+    background: rgb(88, 37, 0);
 }
 
-
-article.libro2 {
-    grid-area: art2;
-}
-
-article.libro3 {
-    grid-area: art3;
-}
-
-article.libro4 {
-    grid-area: art4;
-}
-
-article.libro1, article.libro2, article.libro3, article.libro4 {
-    width: 90%;
-    height: 339px;
-    margin: 5px 0px 0px 0px;
+header.cabeceraArt{
+    width: 95%;
+    height: 45px;
+    margin: 0;
     padding: 0;
-    border: 3px;
+    border: 5px;
     border-style: solid;
     border-color: black;
-    background-image: url(images/Difu3.jpg);
+    border-radius: 15px;
+    background-image: url(images/difum2.jpg);
+    background-size: 100% 100%;
+    font-size: 25px;
+}
+
+h2{
+    color: aliceblue;
+    margin: 0;
+}
+
+article.libros{
+    float: left;
+    width: 45%;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    background-image: url(images/libroEnBlanco.jpg);
+    background-size: 100% 100%;
+    margin: 5px 2% 0 1%;
+    border-radius: 5px;
+}
+
+li{
+    list-style: circle;
+}
+
+button a{
+    color: black;
+}
+
+article.generos{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.btnVerLibro {
-    display: none;
+ul.generos{
+    width: 30%;
+    padding: 0 0 10px 0;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    background-image: url(images/biblioteca2.jpg);
+    background-size: 100% 100%;
 }
 
-aside.publicidades {
+li.genero{
+    font-size: 30px;
+    list-style: none;
+    padding: 15px;
+}
+
+header.cabeceraLog, form.login{
+    margin: 0 0 75px 0;
+}
+
+form.crear, ul.generos, header.cabeceraPag, h2{
+    text-align: center;
+}
+
+form.comentar{
+    background-image: url(images/pergamino2.png);
+    background-size: 100% 100%;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    padding: 45px 0 0 0;
+    width: 80%;
+    height: 300px;
+}
+
+textarea.contenidoComentario{
+    max-width: 40%;
+    min-width: 40%;
+    max-height: 100px;
+    min-height: 100px;
+}
+
+textarea.contenidoDescripcion{
+    max-width: 150%;
+    min-width: 150%;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+button.login{
+    margin: 15px 0 0 0;
+}
+
+div.login{
+    width: 95%;
+    height: 450px;
+    font-size: 25px;
+    background-image: url(images/biblioteca.jpg);
+    background-size: 100% 100%;
+    margin: 5px 0 0 0;
+    border: 3px;
+    border-style: solid;
+    border-color: white;
+}
+
+article.libro, form.editarGenero, div.usuarios, div.login, form.crear, form.login, form.comentar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img.libro{
+    width: 50%;
+    margin: 0 0 15px 0;
+}
+
+aside.publicidades{
     grid-area: publicidad;
     width: 99%;
-    height: 99%;
+    height: 900px;
     margin: 5px 0 0 0;
     padding: 0;
     border: 3px solid black;
@@ -150,351 +189,3 @@ aside.publicidades {
     width: 100%;
     height:50%;
 }
-
-header.categorias {
-    grid-area: header2;
-    width: 90%;
-    height: 30px;
-    margin: 0;
-    padding: 0;
-    border: 5px;
-    border-color: black;
-    border-style: solid;
-    background-image: url(images/difum2.jpg);
-}
-
-article.categoriasGeneros {
-    grid-area: art1;
-    width: 80%;
-    height: 550px;
-    margin: 5px 0px 0px 0px;
-    padding: 0;
-    border: 3px;
-    border-style: solid;
-    border-color: black;
-    background-image: url(images/biblioteca2.jpg);
-    background-size: 100% 100%;
-}
-
-article.categoriasEdad {
-    grid-area: art2;
-    width: 80%;
-    height: 400px;
-    margin: 5px 0px 0px 0px;
-    padding: 0;
-    border: 3px;
-    border-style: solid;
-    border-color: black;
-    background-image: url(images/biblioteca2.jpg);
-    background-size: 100% 100%;
-}
-
-h3.categorias, h3.ingresaUsuario {
-    text-align: center;
-    font-size: 35px;
-    color: aliceblue;
-}
-
-.punto {
-    font-size: 30px;
-    color: aliceblue;
-}
-
-section.ingreseUsuario {
-    grid-area: contenido;
-    width: 90%;
-    height: 500px;
-    border: 2px;
-    border-color: aliceblue;
-    border-style: solid;
-    background-image: url(images/biblioteca.jpg);
-    background-size: 100% 100%;
-    text-align: center;
-    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-    color: white;
-}
-
-h2.ingreseUsuario {
-    width: 200%;
-}
-
-form.ingreseSuUsuario {
-    grid-area: art1;
-    width: 200%;
-}
-
-.sinUsuario {
-    font-size: 20px;
-    margin: 10px 0px 0px 0px;
-}
-
-h2.creaUsuario {
-    grid-area: header2;
-}
-
-section.crearUsuario {
-    grid-area: contenido;
-    width: 90%;
-    text-align: center;
-    border: 2px;
-    border-color: aliceblue;
-    border-style: solid;
-    background-image: url(images/biblioteca5.jpg);
-    background-size: 100% 100%;
-}
-
-form.datosUsuario {
-    grid-area: art1;
-    width: 200%
-}
-
-h3.datosForm, .opcion {
-    color: aliceblue;
-}
-
-.captcha {
-    background-color: aliceblue;
-}
-
-#seccioncaptcha {
-    text-shadow: none;
-}
-
-#seccionfinalizar {
-    color: aliceblue;
-    display: none;
-}
-
-h4 {
-    background-color: black;
-    color: aliceblue;
-}
-
-header.atencionAlCliente {
-    grid-area: header2;
-    color: aliceblue;
-    border: 2px;
-    border-style: solid;
-    border-color: aliceblue;
-    width: 90%;
-    height: 120px;
-    background-image: url(images/atencionalcliente2.jpg);
-    background-size: 100% 100%
-}
-
-h3.atencionAlCliente {
-    padding-left: 2px;
-    margin: 1px;
-}
-
-table {
-    grid-area: art1;
-    margin-top: 10px;
-    width: 100%;
-    border: 1px solid;
-    color: aliceblue;
-    background-image: url(images/atencionalcliente.jpg);
-    background-size: 100% 100%;
-}
-
-th {
-    background-color: rgb(0, 46, 185);
-    color: white;
-}
-
-tr {
-    border: 1px solid;
-    color: aliceblue;    
-}
-
-td {
-    border: 1px solid;
-    color: aliceblue;
-}
-
-tr > button {
-    height: 100%;
-    width: 100%;
-    background-color: rgb(235, 0, 0);
-}
-
-th > input {
-    width: 80px;
-}
-
-section.modificarTabla {
-    grid-area: art3;
-    color: aliceblue;
-    margin-top: 10px;
-    width: 100%;
-    border: 2px;
-    border-style: solid;
-    border-color: aliceblue;
-    background-image: url(images/atencionalcliente.jpg);
-    background-size: 100% 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-form.modificarTabla, div.modificarTabla{
-    border: 1px;
-    border-style: solid;
-    border-color: aliceblue;
-    padding-left: 2px;
-}
-
-.mostrar {
-    display: block;
-}
-
-.ocultar {
-    display: none;
-}
-
-/* @media only screen and (max-width: 800px)  {
-    .contenedor {
-        display: grid;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: auto;
-        grid-template-areas: 
-        "btnMenu header3"
-        "nav nav"
-        "contenido contenido"
-        "publicidad publicidad";
-    }
-
-    section {
-        grid-area: contenido;
-        display: grid;
-        grid-template-columns: 99%;
-        grid-template-rows: auto;
-        grid-template-areas: 
-          "header2"
-          "art1"
-          "art2"
-          "art3"
-          "art4";
-    }
-
-    .botonMenu {
-        display: block;
-        grid-area: btnMenu;
-        width: 99%;
-        font-size: 30px;
-    }
-
-    nav {
-        display: none;
-    }
-
-        
-    h1 {
-        font-size: 40px;
-    }
-
-
-    header.cabeceraPag {
-        grid-area: header3;
-        height: 50px;
-        background-image: url(images/atencionalcliente2.jpg);
-    }
-
-    header.cabeceraArt {
-        margin-top: 5px;
-        width: 99%;
-    }
-
-    article.libro1, article.libro2, article.libro3, article.libro4 {
-        width: 99%;
-        height: 380px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-        
-    .lista1, .lista2, .lista3, .lista4 {
-        display: none;
-    }
-
-    .portada1, .portada2, .portada3, .portada4 {
-        width: 100%;
-    }
-    .btnVerLibro {
-        text-align: center;
-        display: block;
-        width: 100%;
-        font-size: 30px;
-        color: aliceblue;
-        background-color: rgb(58, 0, 99);
-        border-color: black;
-    }
-
-    header.categorias {
-        width: 99%;
-        height: 51px;
-        margin-top: 5px;
-    }
-
-    
-    article.categoriasGeneros, article.categoriasEdad {
-        width: 100%;
-    }
-
-    section.ingreseUsuario {
-        grid-area: contenido;
-        width: 100%;
-        height: 300px;
-        margin-top: 10px;
-    }
-
-    h2.ingreseUsuario {
-        width: 100%;
-    }
-    
-    h3.ingresaUsuario {
-        font-size: 15px;
-    }
-
-    form.ingreseSuUsuario {
-        grid-area: art1;
-        width: 100%;
-    }
-    
-    .sinUsuario {
-        font-size: 17px;
-    }
-
-    section.crearUsuario {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .opcion {
-        display: block;
-    }
-
-    form.datosUsuario {
-        width: 100%
-    }
-
-    header.atencionAlCliente {
-        width: 100%;
-        margin-top: 10px;
-        height: 220px;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    aside.publicidades {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .publicidad {
-        height: 100%;
-    }
-} */
